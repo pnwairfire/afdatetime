@@ -55,7 +55,7 @@ First, install pip (with sudo if necessary):
 
     apt-get install python-pip
 
-Then, to install, for example, v1.2.6, use the following (with sudo if
+Then, to install, for example, v1.0.0, use the following (with sudo if
 necessary):
 
     pip install --trusted-host pypi.smoke.airfire.org -i http://pypi.smoke.airfire.org/simple afdatetime==1.0.0
