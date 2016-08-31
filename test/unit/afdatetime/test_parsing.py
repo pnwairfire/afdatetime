@@ -6,7 +6,7 @@ __copyright__ = "Copyright 2016, AirFire, PNW, USFS"
 import datetime
 from py.test import raises
 
-from pyairfire.datetime.parsing import (
+from afdatetime.parsing import (
     parse_datetime,
     parse_datetimes,
     parse_utc_offset,
