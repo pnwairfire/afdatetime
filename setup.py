@@ -2,6 +2,10 @@ from setuptools import setup, find_packages
 
 from afdatetime import __version__
 
+test_requirements = []
+with open('requirements-test.txt') as f:
+    test_requirements = [r for r in f.read().splitlines()]
+
 setup(
     name='afdatetime',
     version=__version__,
@@ -19,5 +23,6 @@ setup(
         "Operating System :: MacOS"
     ],
     url='https://github.com/pnwairfire/afdatetime',
-    description='Utilities for working with datetime objects'
+    description='Utilities for working with datetime objects',
+    tests_require=test_requirements
 )
