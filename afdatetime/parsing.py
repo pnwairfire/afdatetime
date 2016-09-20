@@ -87,17 +87,26 @@ def fill_in_date(dt):
 ## Originally in bluesky package
 ##
 
-def parse_datetime(v, k):
-    # TODO: make 'k' optional kwargs
+def parse_datetime(v, k=None):
+    """Parses datetime string and returns datetime object
+
+    args:
+     - v -- datetime string value
+
+    kwargs:
+     - k -- optional field name, to be used in exception message
+    """
     try:
         return parse(v, extra_formats=['%Y-%m-%d %H:%M:%S'])
     except ValueError as e:
         # datetime_parsing will raise ValueError if invalid format; re-raise
         # wih specific msg
-        raise ValueError("Invalid datetime format for '{}' field: {}".format(k, v))
+        raise ValueError("Invalid datetime format: {}{}".format(v,
+            " (for '{}')".format(k) if k else ''))
     except TypeError as e:
         # TypeError will e raised if v is not a string; re-raise wih specific msg
-        raise ValueError("Invalid datetime format for '{}' field: {}".format(k, v))
+        raise ValueError("Invalid datetime format: {}{}".format(v,
+            " (for '{}')".format(k) if k else ''))
 
 def parse_datetimes(d, *keys):
     r = {}
