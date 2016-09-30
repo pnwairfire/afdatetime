@@ -31,6 +31,9 @@ RECOGNIZED_DATETIME_FORMATS = [
 ]
 
 def parse(datetime_str, extra_formats=[]):
+    if isinstance(datetime_str, datetime.date):
+        return datetime_str
+
     for format in RECOGNIZED_DATETIME_FORMATS + extra_formats:
         try:
             return datetime.datetime.strptime(datetime_str, format)
