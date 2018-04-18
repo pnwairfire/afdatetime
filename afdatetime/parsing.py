@@ -24,31 +24,13 @@ RECOGNIZED_DATETIME_FORMATS = [
     '%Y%m%dT%H%M%S',
     '%Y%m%dT%H%M%SZ',
     '%Y%m%d%H%M%S',
-    '%Y%m%d%H%M%S',
     '%Y%m%d%H%M%SZ',
-    '%Y-%m-%dT%H:%M:%S.%f',
-    '%Y-%m-%dT%H:%M:%S.%fZ',
-    '%Y/%m/%dT%H:%M:%S.%f',
-    '%Y/%m/%dT%H:%M:%S.%fZ',
-    '%Y%m%dT%H%M%S.%f',
-    '%Y%m%dT%H%M%S.%fZ',
-    '%Y%m%d%H%M%S.%f',
-    '%Y%m%d%H%M%S.%f',
-    '%Y%m%d%H%M%S.%fZ',
     '%Y-%m-%d',
     '%Y/%m/%d',
     '%Y%m%d'
 ]
 
 def parse(datetime_str, extra_formats=[]):
-    """Parses datetime string, trying a number of common formats
-
-    args:
-     - datetime_str -- datetime string
-
-    kwargs
-     - extra_formats -- list of extra formats to try
-    """
     if isinstance(datetime_str, datetime.date):
         return datetime_str
 
