@@ -124,7 +124,7 @@ def parse_datetimes(d, *keys):
             raise ValueError("Missing '{}' datetime field".format(k))
     return r
 
-OFFSET_MATCHER = re.compile('([+-]?\d{2}):(\d{2})')
+OFFSET_MATCHER = re.compile('([+-]?\d{2}):?(\d{2})')
 def parse_utc_offset(utc_offset_str):
     """Parses iso8601 formmated utc offset to float value
 
@@ -135,6 +135,8 @@ def parse_utc_offset(utc_offset_str):
      4.0
      > parse_utc_offset('-03:30')
      -3.5
+     > parse_utc_offset('+0400')
+     4.0
 
 
     TODO: look at other options:
