@@ -6,8 +6,7 @@ __copyright__ = "Copyright 2016, AirFire, PNW, USFS"
 import datetime
 from py.test import raises
 
-from afdatetime.timezones import UtcOffsetFinder
-from afdatetime.timezones import DstAccurateTimeZone
+from afdatetime.timezones import UtcOffsetFinder, DstAccurateTimeZone
 
 
 class TestUtcOffsetFinder(object):
