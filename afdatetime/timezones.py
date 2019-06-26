@@ -58,7 +58,7 @@ class DstAccurateTimeZone(object):
         """
         tz_str = self._timezone_finder.timezone_at(lng=lng, lat=lat)
         if not tz_str:
-            return None, None
+            return {'name': None, 'abbreviation': None, 'dst': None }
         tz = pytz.timezone(tz_str)
         is_dst, tz_abbreviation = self._is_dst(dt, tz)
         return {'name': tz_str, 'abbreviation': tz_abbreviation, 'dst': is_dst}
