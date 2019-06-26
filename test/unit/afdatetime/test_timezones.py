@@ -38,4 +38,23 @@ class TestDstAccurateTimeZone(object):
         expected = {'name': 'America/Los_Angeles', 'abbreviation': 'PDT', 'dst': True}
         assert expected == actual
 
+    def test_bad_lat_lng(self):
+        with raises(ValueError):
+            DstAccurateTimeZone().find(300.0, -119.0,
+            datetime.datetime(2015, 8, 1, 10, 9, 8))
+        with raises(ValueError):
+            DstAccurateTimeZone().find(45.0, -300.0,
+            datetime.datetime(2015, 8, 1, 10, 9, 8))
+
+    def test_bad_datetime(self):
+        with raises(AttributeError):
+            DstAccurateTimeZone().find(45.0, -118.4,
+            '2019-01-01')
+        with raises(AttributeError):
+            DstAccurateTimeZone().find(45.0, -118.4,
+            123456)
+
+
+
+
 
