@@ -25,8 +25,8 @@ setup(
     url='https://github.com/pnwairfire/afdatetime',
     description='Utilities for working with datetime objects',
     install_requires=[
-        "timezonefinder==2.1.2",
-        "pytz==2016.6.1"
+        "timezonefinder==5.1.0",
+        "pytz==2020.5"
     ],
     tests_require=test_requirements
 )
