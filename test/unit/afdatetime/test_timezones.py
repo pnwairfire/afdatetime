@@ -4,7 +4,7 @@ __author__ = "Joel Dubowy"
 __copyright__ = "Copyright 2016, AirFire, PNW, USFS"
 
 import datetime
-from py.test import raises
+from pytest import raises
 
 from afdatetime.timezones import UtcOffsetFinder, DstAccurateTimeZone
 
